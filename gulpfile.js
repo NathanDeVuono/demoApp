@@ -9,17 +9,17 @@ var del = require('del');
 var server = require('gulp-server-livereload');
 
 var paths = {
-  scripts: ['src/js/**/*.js', '!external/**/*.js'],
-  scss: 'src/scss/**/*.scss',
+  scripts: ['src/**/*.js'],
+  scss: 'src/**/*.scss',
   index: 'src/index.html'
 };
 
 gulp.task('clean-scripts', function() {
-  return del(['build/js']);
+  return del(['build/app.min.js']);
 });
 
 gulp.task('clean-scss', function() {
-  return del(['build/css']);
+  return del(['build/theme.css']);
 });
 
 gulp.task('clean-index', function() {
@@ -28,12 +28,12 @@ gulp.task('clean-index', function() {
 
 gulp.task('scripts', ['clean-scripts'], function() {
   return gulp.src(paths.scripts)
-    .pipe(jshint(paths.scripts))
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'))
     .pipe(sourcemaps.init())
-      .pipe(concat('app.min.js'))
       .pipe(uglify())
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('build/js'));
+    .pipe(gulp.dest('build'));
 });
 
 gulp.task('scss', ['clean-scss'], function() {
@@ -42,7 +42,7 @@ gulp.task('scss', ['clean-scss'], function() {
     .pipe(scss().on('error', scss.logError))
     .pipe(scss({outputStyle: 'compressed'}))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('build/css'));
+    .pipe(gulp.dest('build'));
 });
 
 gulp.task('webserver', function() {
