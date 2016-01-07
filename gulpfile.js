@@ -9,69 +9,88 @@ var del = require('del');
 var server = require('gulp-server-livereload');
 
 var paths = {
-  scripts: ['src/**/*.js'],
-  scss: 'src/**/*.scss',
-  index: 'src/index.html'
+	scripts: ['src/**/*.js'],
+	scss: 'src/**/*.scss',
+	index: 'src/index.html',
+	whoops: 'src/whoops.html',
+	partials: 'src/components/**/*.html'
 };
 
 gulp.task('clean-scripts', function() {
-  return del(['build/app.min.js']);
+	return del(['build/app.min.js']);
 });
 
 gulp.task('clean-scss', function() {
-  return del(['build/theme.css']);
+	return del(['build/theme.css']);
 });
 
 gulp.task('clean-index', function() {
-  return del(['build/index.html']);
+	return del(['build/index.html']);
+});
+
+gulp.task('clean-partials', function() {
+	return del(['build/components']);
 });
 
 gulp.task('scripts', ['clean-scripts'], function() {
-  return gulp.src(paths.scripts)
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'))
-    .pipe(sourcemaps.init())
-      .pipe(uglify())
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('build'));
+	return gulp.src(paths.scripts)
+		.pipe(jshint())
+		.pipe(jshint.reporter('default'))
+		.pipe(sourcemaps.init())
+			.pipe(concat('app.js', {newLine: '\r\n'}))
+			// .pipe(uglify())
+		.pipe(sourcemaps.write())
+		.pipe(gulp.dest('build'));
 });
 
 gulp.task('scss', ['clean-scss'], function() {
-  return gulp.src(paths.scss)
-    .pipe(sourcemaps.init())
-    .pipe(scss().on('error', scss.logError))
-    .pipe(scss({outputStyle: 'compressed'}))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('build'));
+	return gulp.src(paths.scss)
+		.pipe(sourcemaps.init())
+		.pipe(scss().on('error', scss.logError))
+		.pipe(scss({outputStyle: 'compressed'}))
+		.pipe(sourcemaps.write())
+		.pipe(gulp.dest('build'));
 });
 
 gulp.task('webserver', function() {
-  gulp.src('.')
-    .pipe(server({
-      livereload: true,
-      directoryListing: false,
-      defaultFile: 'build/index.html',
-      open: false
-    }));
+	gulp.src('.')
+		.pipe(server({
+			livereload: true,
+			directoryListing: false,
+			defaultFile: 'build/index.html',
+			open: false,
+			host:'192.168.1.66'
+		}));
+});
+
+gulp.task('copy-partials', ['clean-partials'], function() {
+	gulp.src(paths.partials)
+		.pipe(gulp.dest('build'));
 });
 
 gulp.task('copy-index', function() {
-  gulp.src(paths.index)
-    .pipe(gulp.dest('build'));
+	gulp.src(paths.index)
+		.pipe(gulp.dest('build'));
+});
+
+gulp.task('copy-whoops', function() {
+	gulp.src(paths.whoops)
+		.pipe(gulp.dest('build'));
 });
 
 gulp.task('index', ['scripts', 'scss', 'clean-index', 'copy-index'], function () {
-  var sources = gulp.src(['build/**/*.js', 'build/**/*.css'], {read: false});
+	var sources = gulp.src(['build/**/*.js', 'build/**/*.css'], {read: false});
  
-  return gulp.src('src/index.html')
-    .pipe(inject(sources))
-    .pipe(gulp.dest('build'));
+	return gulp.src('src/index.html')
+		.pipe(inject(sources))
+		.pipe(gulp.dest('build'));
 });
 
 gulp.task('watch', function() {
-  gulp.watch(paths.scripts, ['scripts']);
-  gulp.watch(paths.scss, ['scss']);
-  gulp.watch(paths.index, ['index']);
+	gulp.watch(paths.scripts, ['scripts']);
+	gulp.watch(paths.scss, ['scss']);
+	gulp.watch(paths.index, ['index']);
+	gulp.watch(paths.partials, ['copy-partials']);
 });
 
-gulp.task('default', ['watch', 'index', 'webserver']);
+gulp.task('default', ['watch', 'index', 'copy-whoops', 'copy-partials', 'webserver']);
