@@ -1,0 +1,227 @@
+[
+  {
+    "_id": "567cd16e701c52a13509b19b",
+    "index": 0,
+    "guid": "af2a29d0-16ee-44f1-942e-cac08269c6db",
+    "isActive": false,
+    "balance": "$3,419.97",
+    "picture": "http://placehold.it/32x32",
+    "age": 20,
+    "eyeColor": "blue",
+    "name": "Candy Robles",
+    "gender": "female",
+    "company": "RUGSTARS",
+    "email": "candyrobles@rugstars.com",
+    "phone": "+1 (857) 518-3791",
+    "address": "317 Heyward Street, Dotsero, Oregon, 3648",
+    "about": "Enim et sit laboris do magna id Lorem officia eu aliqua proident nulla sit quis. Consectetur et nisi deserunt nisi nostrud dolore non commodo aliqua Lorem. Velit irure adipisicing anim pariatur eu velit sint est elit ipsum exercitation labore. Id aute cupidatat pariatur reprehenderit nostrud. Laborum exercitation veniam ipsum exercitation labore in.\r\n",
+    "registered": "2014-03-26T02:01:28 +07:00",
+    "latitude": -8.622645,
+    "longitude": -119.501894,
+    "tags": [
+      "veniam",
+      "magna",
+      "veniam",
+      "qui",
+      "enim",
+      "dolor",
+      "voluptate"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Tamara Hodges"
+      },
+      {
+        "id": 1,
+        "name": "Marion Stout"
+      },
+      {
+        "id": 2,
+        "name": "Holcomb Reeves"
+      }
+    ],
+    "greeting": "Hello, Candy Robles! You have 1 unread messages.",
+    "favoriteFruit": "apple"
+  },
+  {
+    "_id": "567cd16ec57c255c2123c662",
+    "index": 1,
+    "guid": "0794f17e-d700-4634-afaa-bd72f56f6734",
+    "isActive": false,
+    "balance": "$2,631.75",
+    "picture": "http://placehold.it/32x32",
+    "age": 36,
+    "eyeColor": "brown",
+    "name": "Blackwell Cleveland",
+    "gender": "male",
+    "company": "SKYBOLD",
+    "email": "blackwellcleveland@skybold.com",
+    "phone": "+1 (986) 586-3793",
+    "address": "386 Wolcott Street, Sabillasville, Marshall Islands, 4678",
+    "about": "Eiusmod eiusmod est consectetur consectetur do veniam eu consequat eiusmod nulla dolore aliquip incididunt. Adipisicing fugiat id do minim culpa tempor et velit sint ea amet. Anim sint pariatur adipisicing eu deserunt quis excepteur dolore aute id magna.\r\n",
+    "registered": "2015-04-17T01:00:07 +07:00",
+    "latitude": 72.062897,
+    "longitude": -37.127584,
+    "tags": [
+      "nulla",
+      "aliquip",
+      "consectetur",
+      "voluptate",
+      "ipsum",
+      "tempor",
+      "occaecat"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Chapman Casey"
+      },
+      {
+        "id": 1,
+        "name": "Noemi Bush"
+      },
+      {
+        "id": 2,
+        "name": "Sanders Combs"
+      }
+    ],
+    "greeting": "Hello, Blackwell Cleveland! You have 6 unread messages.",
+    "favoriteFruit": "strawberry"
+  },
+  {
+    "_id": "567cd16ef609a5ab354caaaf",
+    "index": 2,
+    "guid": "7cdbaea2-eb31-4dd8-85a3-53c3432fd477",
+    "isActive": false,
+    "balance": "$1,827.95",
+    "picture": "http://placehold.it/32x32",
+    "age": 37,
+    "eyeColor": "brown",
+    "name": "Angelica Goodman",
+    "gender": "female",
+    "company": "DUFLEX",
+    "email": "angelicagoodman@duflex.com",
+    "phone": "+1 (896) 587-3864",
+    "address": "291 Stockton Street, Kersey, Arkansas, 8980",
+    "about": "Consequat mollit non culpa dolore ex culpa Lorem consequat est commodo exercitation velit. Amet tempor enim labore reprehenderit voluptate mollit mollit duis eiusmod mollit tempor. Do est cupidatat consequat ullamco duis veniam. Velit esse proident cillum velit nostrud officia ex. Voluptate sunt occaecat non tempor qui eiusmod elit aute adipisicing cupidatat. Reprehenderit officia quis culpa dolor excepteur culpa culpa ea elit ad dolore sint occaecat sunt. Elit dolore laborum ut ullamco sit nulla ex.\r\n",
+    "registered": "2015-04-13T08:34:55 +07:00",
+    "latitude": -29.212266,
+    "longitude": -163.935058,
+    "tags": [
+      "incididunt",
+      "ullamco",
+      "consequat",
+      "consectetur",
+      "est",
+      "cillum",
+      "minim"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Watts Lott"
+      },
+      {
+        "id": 1,
+        "name": "Pace Wade"
+      },
+      {
+        "id": 2,
+        "name": "Corine Osborne"
+      }
+    ],
+    "greeting": "Hello, Angelica Goodman! You have 10 unread messages.",
+    "favoriteFruit": "strawberry"
+  },
+  {
+    "_id": "567cd16e880a57a7e9f3a4d2",
+    "index": 3,
+    "guid": "0710e0d0-ae2b-46ce-84d7-ae1ecedb1ba1",
+    "isActive": false,
+    "balance": "$1,317.67",
+    "picture": "http://placehold.it/32x32",
+    "age": 21,
+    "eyeColor": "blue",
+    "name": "Roach Cooper",
+    "gender": "male",
+    "company": "ZILPHUR",
+    "email": "roachcooper@zilphur.com",
+    "phone": "+1 (964) 538-3199",
+    "address": "837 Poplar Avenue, Ahwahnee, Colorado, 7939",
+    "about": "Nostrud cupidatat exercitation fugiat ut aliquip esse. Officia quis elit in et anim aute pariatur deserunt adipisicing ullamco. Non aliqua consectetur id id deserunt pariatur officia enim ipsum occaecat nostrud culpa sit. Irure irure velit magna adipisicing ad laboris ad et elit ipsum excepteur. Eiusmod reprehenderit laborum fugiat ullamco ex occaecat duis id fugiat tempor eiusmod.\r\n",
+    "registered": "2015-04-30T01:15:11 +07:00",
+    "latitude": 59.201381,
+    "longitude": -167.777746,
+    "tags": [
+      "anim",
+      "nulla",
+      "labore",
+      "sit",
+      "reprehenderit",
+      "eiusmod",
+      "amet"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Adeline Munoz"
+      },
+      {
+        "id": 1,
+        "name": "Kelsey Love"
+      },
+      {
+        "id": 2,
+        "name": "Craig Crawford"
+      }
+    ],
+    "greeting": "Hello, Roach Cooper! You have 9 unread messages.",
+    "favoriteFruit": "strawberry"
+  },
+  {
+    "_id": "567cd16e32f7241945659003",
+    "index": 4,
+    "guid": "a122f46e-b52c-4c67-b620-ef4d5a35fd68",
+    "isActive": true,
+    "balance": "$1,387.95",
+    "picture": "http://placehold.it/32x32",
+    "age": 31,
+    "eyeColor": "brown",
+    "name": "Carmella Rosario",
+    "gender": "female",
+    "company": "VETRON",
+    "email": "carmellarosario@vetron.com",
+    "phone": "+1 (843) 417-3769",
+    "address": "770 Rockaway Parkway, Winesburg, Connecticut, 1384",
+    "about": "Irure cupidatat voluptate nostrud aliqua duis amet. Officia occaecat consequat minim consequat. Cupidatat eu voluptate culpa anim proident sunt. Pariatur laborum et dolor nisi. Dolore aliqua esse in reprehenderit et est nisi ea sunt.\r\n",
+    "registered": "2015-07-02T05:08:33 +07:00",
+    "latitude": -34.91862,
+    "longitude": -41.743161,
+    "tags": [
+      "cupidatat",
+      "deserunt",
+      "ea",
+      "amet",
+      "ipsum",
+      "adipisicing",
+      "eu"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Reba Mcgowan"
+      },
+      {
+        "id": 1,
+        "name": "Marta Morton"
+      },
+      {
+        "id": 2,
+        "name": "Guerrero Watson"
+      }
+    ],
+    "greeting": "Hello, Carmella Rosario! You have 7 unread messages.",
+    "favoriteFruit": "strawberry"
+  }
+]

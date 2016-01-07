@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="demoApp">
 <head>
 	<meta charset="UTF-8">
 	<title>Demo App - Nathan DeVuono</title>
@@ -9,10 +9,9 @@
 	<!-- endinject -->
 </head>
 <body>
+	<a ui-sref="users">Users</a>
 	<div ui-view></div>
 
-	<div ui-sref="state1"></div>
-	<div ui-sref="state2"></div>
 	<!-- inject:js -->
 	<!-- endinject -->
 </body>
