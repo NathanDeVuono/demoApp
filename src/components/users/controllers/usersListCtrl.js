@@ -1,4 +1,6 @@
-users.controller('usersListCtrl', ['$rootScope', '$scope', 'userSrv', function($rootScope, $scope, usersSrv){
+'use strict';
+
+users.controller('usersListCtrl', function($rootScope, $scope, usersSrv){
 	if (!usersSrv.users) {
 		$scope.userListLoading = true;
 		usersSrv.getUsersList();
@@ -10,4 +12,4 @@ users.controller('usersListCtrl', ['$rootScope', '$scope', 'userSrv', function($
 		$scope.users = users;
 		$scope.userListLoading = false;
 	});
-}]);
+});

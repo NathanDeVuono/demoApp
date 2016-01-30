@@ -1,4 +1,6 @@
-users.service('userSrv', ['$q', '$rootScope', 'crudSrv', function($q, $rootScope, crudSrv){
+'use strict';
+
+users.service('userSrv', function($q, $rootScope, crudSrv){
 	var self = this;
 	var apiPath = '/src/components/users/models/';
 
@@ -30,4 +32,4 @@ users.service('userSrv', ['$q', '$rootScope', 'crudSrv', function($q, $rootScope
 		}
 		return false;
 	}
-}]);
+});

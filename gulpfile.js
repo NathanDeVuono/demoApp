@@ -1,3 +1,5 @@
+'use strict';
+
 var gulp = require('gulp');
 var scss = require('gulp-sass');
 var concat = require('gulp-concat');
@@ -12,6 +14,7 @@ var paths = {
 	scripts: ['src/**/*.js'],
 	scss: 'src/**/*.scss',
 	index: 'src/index.html',
+	home: 'src/home.html',
 	whoops: 'src/whoops.html',
 	partials: 'src/components/**/*.html'
 };
@@ -28,6 +31,10 @@ gulp.task('clean-index', function() {
 	return del(['build/index.html']);
 });
 
+gulp.task('clean-home', function() {
+	return del(['build/home.html']);
+});
+
 gulp.task('clean-partials', function() {
 	return del(['build/components']);
 });
@@ -38,7 +45,7 @@ gulp.task('scripts', ['clean-scripts'], function() {
 		.pipe(jshint.reporter('default'))
 		.pipe(sourcemaps.init())
 			.pipe(concat('app.js', {newLine: '\r\n'}))
-			// .pipe(uglify())
+			.pipe(uglify({mangle:false}))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('build'));
 });
@@ -63,7 +70,7 @@ gulp.task('webserver', function() {
 		}));
 });
 
-gulp.task('copy-partials', ['clean-partials'], function() {
+gulp.task('copy-partials', ['clean-partials', 'copy-home'], function() {
 	gulp.src(paths.partials)
 		.pipe(gulp.dest('build'));
 });
@@ -75,6 +82,11 @@ gulp.task('copy-index', function() {
 
 gulp.task('copy-whoops', function() {
 	gulp.src(paths.whoops)
+		.pipe(gulp.dest('build'));
+});
+
+gulp.task('copy-home', ['clean-home'], function() {
+	gulp.src(paths.home)
 		.pipe(gulp.dest('build'));
 });
 
