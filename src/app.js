@@ -8,7 +8,8 @@
 
 var demoApp = angular.module('demoApp', [
 	'ui.router',
-	'users'
+	'users',
+	'movies'
 ]);
 
 demoApp.config(function($stateProvider, $urlRouterProvider) {

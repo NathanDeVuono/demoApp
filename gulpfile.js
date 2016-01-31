@@ -78,7 +78,7 @@ gulp.task('build', ['copy-views', 'index']);
 gulp.task('watch', ['build'], function() {
 	gulp.watch(paths.scripts, ['scripts']);
 	gulp.watch(paths.scss, ['scss']);
-	gulp.watch(paths.views, ['copy-views']);
+	gulp.watch(paths.views, ['copy-views', 'index']);
 });
 
 gulp.task('default', ['watch', 'webserver']);
