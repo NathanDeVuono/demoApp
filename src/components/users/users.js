@@ -14,32 +14,32 @@ users.config(function($stateProvider, $urlRouterProvider) {
 		.state('users', {
 			display:'Users',
 			url: '/users',
-			templateUrl: 'build/users/views/users.html'
+			templateUrl: 'build/components/users/views/users.html'
 		})
 		.state('users.list', {
 			display:'List',
 			url: '/list',
-			templateUrl: 'build/users/views/users.list.html',
+			templateUrl: 'build/components/users/views/users.list.html',
 			controller: 'usersListCtrl'
 		})
 		.state('users.detail', {
 			display:'Details',
 			url: '/detail',
-			templateUrl: 'build/users/views/users.detail.html',
+			templateUrl: 'build/components/users/views/users.detail.html',
 			controller: 'usersDetailCtrl',
 			params: {user: null}
 		})
 		.state('users.edit', {
 			display:'Edit',
 			url: '/edit',
-			templateUrl: 'build/users/views/users.edit.html',
+			templateUrl: 'build/components/users/views/users.edit.html',
 			controller: 'usersEditCtrl',
 			params: {user: null}
 		})
 		.state('users.new', {
 			display:'New',
 			url: '/new',
-			templateUrl: 'build/users/views/users.edit.html',
+			templateUrl: 'build/components/users/views/users.edit.html',
 			controller: 'usersEditCtrl'
 		});
 });
