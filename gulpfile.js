@@ -11,7 +11,7 @@ var del = require('del');
 var server = require('gulp-server-livereload');
 
 var paths = {
-	scripts: ['src/**/*.js', 'src/*.js'],
+	scripts: 'src/**/*.js',
 	scss: 'src/**/*.scss',
 	views: 'src/**/*.html'
 };

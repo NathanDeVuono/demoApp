@@ -1,3 +1,8 @@
+// This directive initially had a bunch of DOM manipulation in it
+// using native DOM methods to be all efficient and whatnot
+// but it ended up being better to just use a damn template.
+// $compile loops suck.
+
 'use strict';
 
 demoApp.directive('daCrumbs', function($compile){

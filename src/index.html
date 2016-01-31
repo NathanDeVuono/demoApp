@@ -12,11 +12,18 @@
 	<header>
 		<h1 class="title">ngDemo</h1>
 		<nav>
-			<a ui-sref="users">Users</a>
-			<a ui-sref="movies">Movies</a>
+			<ul>
+				<li>
+					<a ui-sref="users">Users</a>
+				</li>
+				<li>
+					<a ui-sref="movies">Movies</a>
+				</li>
+			</ul>
 		</nav>
-		<da-crumbs></da-crumbs>
 	</header>
+	<da-crumbs class="monospace"></da-crumbs>
+
 	<div ui-view></div>
 
 	<!-- inject:js -->
