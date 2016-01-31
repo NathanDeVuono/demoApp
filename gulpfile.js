@@ -11,12 +11,9 @@ var del = require('del');
 var server = require('gulp-server-livereload');
 
 var paths = {
-	scripts: ['src/**/*.js'],
+	scripts: ['src/**/*.js', 'src/*.js'],
 	scss: 'src/**/*.scss',
-	index: 'src/index.html',
-	home: 'src/home.html',
-	whoops: 'src/whoops.html',
-	partials: 'src/components/**/*.html'
+	views: 'src/**/*.html'
 };
 
 gulp.task('clean-scripts', function() {
@@ -27,16 +24,8 @@ gulp.task('clean-scss', function() {
 	return del(['build/theme.css']);
 });
 
-gulp.task('clean-index', function() {
-	return del(['build/index.html']);
-});
-
-gulp.task('clean-home', function() {
-	return del(['build/home.html']);
-});
-
-gulp.task('clean-partials', function() {
-	return del(['build/components']);
+gulp.task('clean-views', function() {
+	return del(['build/**/*.html']);
 });
 
 gulp.task('scripts', ['clean-scripts'], function() {
@@ -70,39 +59,26 @@ gulp.task('webserver', function() {
 		}));
 });
 
-gulp.task('copy-partials', ['clean-partials', 'copy-home'], function() {
-	gulp.src(paths.partials)
+gulp.task('copy-views', ['clean-views'], function() {
+	gulp.src(paths.views)
 		.pipe(gulp.dest('build'));
 });
 
-gulp.task('copy-index', function() {
-	gulp.src(paths.index)
-		.pipe(gulp.dest('build'));
-});
 
-gulp.task('copy-whoops', function() {
-	gulp.src(paths.whoops)
-		.pipe(gulp.dest('build'));
-});
-
-gulp.task('copy-home', ['clean-home'], function() {
-	gulp.src(paths.home)
-		.pipe(gulp.dest('build'));
-});
-
-gulp.task('index', ['scripts', 'scss', 'clean-index', 'copy-index'], function () {
-	var sources = gulp.src(['build/**/*.js', 'build/**/*.css'], {read: false});
+gulp.task('index', ['scripts', 'scss'], function () {
+	var sources = gulp.src(['build/*.js', 'build/*.css'], {read: false});
  
 	return gulp.src('src/index.html')
 		.pipe(inject(sources))
 		.pipe(gulp.dest('build'));
 });
 
-gulp.task('watch', function() {
+gulp.task('build', ['copy-views', 'index']);
+
+gulp.task('watch', ['build'], function() {
 	gulp.watch(paths.scripts, ['scripts']);
 	gulp.watch(paths.scss, ['scss']);
-	gulp.watch(paths.index, ['index']);
-	gulp.watch(paths.partials, ['copy-partials']);
+	gulp.watch(paths.views, ['copy-views']);
 });
 
-gulp.task('default', ['watch', 'index', 'copy-whoops', 'copy-partials', 'webserver']);
+gulp.task('default', ['watch', 'webserver']);

@@ -20,7 +20,7 @@ demoApp.config(function($stateProvider, $urlRouterProvider) {
 			url:'/',
 			templateUrl: 'build/home.html'
 		})
-		.state('whoops', {
+		.state('home.whoops', {
 			display: 'Whoops',
 			url:'/whoops',
 			templateUrl: 'build/whoops.html'
