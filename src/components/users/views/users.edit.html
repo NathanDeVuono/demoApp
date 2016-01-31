@@ -1,8 +1,8 @@
-<h2 ng-if="!user">Add New User</h2>
-<h2 ng-if="user">Edit {{user.name}}</h2>
+<h2 ng-if="!userExisting">Add New User</h2>
+<h2 ng-if="userExisting">Edit {{user.name}}</h2>
 <hr>
 <form ng-submit="submit()">
-	<div ng-if="!user">
+	<div ng-hide="userExisting">
 		<label for="name">Name</label>
 		<input type="text" ng-model="user.name" id="name" required>	
 	</div>
