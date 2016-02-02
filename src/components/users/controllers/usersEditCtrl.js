@@ -1,8 +1,15 @@
-users.controller('usersEditCtrl', ['$scope', '$state', '$stateParams', 'userSrv', function($scope, $state, $stateParams, userSrv){
-	$scope.user = $stateParams.user;
+
+
+users.controller('usersEditCtrl', function($scope, $state, $stateParams, usersSrv){
+	if ($stateParams.user) {
+		$scope.user = $stateParams.user;
+		$scope.userExisting = true;
+	} else {
+		$scope.userExisting = false;
+	}
 
 	$scope.submit = function() {
-		userSrv.save($scope.user);
+		usersSrv.save($scope.user);
 		$state.go('users.list');
 	};
-}]);
+});

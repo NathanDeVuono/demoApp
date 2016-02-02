@@ -2,6 +2,7 @@
 <html lang="en" ng-app="demoApp">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Demo App - Nathan DeVuono</title>
 	<script src="node_modules/angular/angular.min.js"></script>
 	<script src="node_modules/angular-ui-router/build/angular-ui-router.min.js"></script>
@@ -9,8 +10,30 @@
 	<!-- endinject -->
 </head>
 <body>
-	<a ui-sref="users">Users</a>
-	<div ui-view></div>
+	<header>
+		<div class="wrapper">
+			<h1 class="title"><a ui-sref="home">ngDemo</a></h1>
+			<nav>
+				<ul>
+					<a ui-sref="users">
+						<li>
+							Users
+						</li>
+					</a>
+					<a ui-sref="movies">
+						<li>
+							Movies
+						</li>
+					</a>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<main class="wrapper">
+		<da-crumbs class="monospace"></da-crumbs>
+
+		<div ui-view></div>
+	</main>
 
 	<!-- inject:js -->
 	<!-- endinject -->

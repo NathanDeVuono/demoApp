@@ -1,3 +1,5 @@
-users.controller('usersDetailCtrl', ['$scope', '$stateParams', function($scope, $stateParams){
+
+
+users.controller('usersDetailCtrl', function($scope, $stateParams){
 	$scope.user = $stateParams.user;
-}]);
+});

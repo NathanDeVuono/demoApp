@@ -1,4 +1,5 @@
-demoApp.service('crudSrv', ['$http', function($http){
+
+demoApp.service('crudSrv', function($http){
 	this.get = function(path, config) {
 		return $http({
 			url: path,
@@ -6,4 +7,4 @@ demoApp.service('crudSrv', ['$http', function($http){
 			params: config
 		});
 	};
-}]);
+});
