@@ -1,0 +1,32 @@
+button {
+	background: $primary;
+	border:none;
+	border-radius:.25em;
+	padding:.5em;
+
+	color:white;
+
+	&:hover {
+		background: lighten($primary, 5%);
+	}
+
+	&:active {
+		background: darken($primary, 5%);
+		color: darken(white, 5%);
+	}
+	
+	&.big {
+		font-size:1.25rem;
+	}
+}
+
+.card {
+	border: 1px solid #ccc;
+	border-radius:3px;
+	box-shadow:0 1px rgba(0,0,0,.25);
+
+	padding:1em;
+	margin-top:1rem;
+
+	background-color:white;
+}

@@ -34,7 +34,7 @@ gulp.task('scripts', ['clean-scripts'], function() {
 		.pipe(jshint.reporter('default'))
 		.pipe(sourcemaps.init())
 			.pipe(concat('app.js', {newLine: '\r\n'}))
-			.pipe(uglify({mangle:false}))
+			// .pipe(uglify({mangle:false}))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('build'));
 });

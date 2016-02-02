@@ -1,4 +1,4 @@
-'use strict';
+
 
 users.service('usersSrv', function($q, $rootScope, crudSrv){
 	var self = this;

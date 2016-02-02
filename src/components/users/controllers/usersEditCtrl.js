@@ -1,4 +1,4 @@
-'use strict';
+
 
 users.controller('usersEditCtrl', function($scope, $state, $stateParams, usersSrv){
 	if ($stateParams.user) {

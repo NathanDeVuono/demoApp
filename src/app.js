@@ -4,7 +4,6 @@
 * Demo application to show off my front-end work
 */
 
-'use strict';
 
 var demoApp = angular.module('demoApp', [
 	'ui.router',
@@ -19,11 +18,13 @@ demoApp.config(function($stateProvider, $urlRouterProvider) {
 		.state('home', {
 			display: 'Home',
 			url:'/',
+			module: 'root',
 			templateUrl: 'build/home.html'
 		})
-		.state('home.whoops', {
+		.state('whoops', {
 			display: 'Whoops',
 			url:'/whoops',
+			module: 'root',
 			templateUrl: 'build/whoops.html'
 		});
 });

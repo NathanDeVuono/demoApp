@@ -1,4 +1,3 @@
-'use strict';
 
 demoApp.service('crudSrv', function($http){
 	this.get = function(path, config) {

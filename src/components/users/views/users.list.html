@@ -1,8 +1,10 @@
-<h2>List</h2>
-<hr>
-<button ui-sref="users.new">New User</button>
-<ul>
-	<li ng-repeat="user in users">
-		<a ui-sref="users.detail({user: user})">{{user.name}}</a>
-	</li>
-</ul>
+<div class="card">
+	<h2>List</h2>
+	<button ui-sref="users.new">New User</button>
+	<hr>
+	<ul>
+		<li ng-repeat="user in users">
+			<a ui-sref="users.detail({user: user})">{{user.name}}</a>
+		</li>
+	</ul>
+</div>

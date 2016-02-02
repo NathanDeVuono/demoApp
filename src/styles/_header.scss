@@ -2,28 +2,34 @@ header {
 	background-color:$primary;
 
 	position:relative;
-
 	h1 {
+		font-size:2rem;
 		color:white;
-		width:6em;
+		width:6rem;
 	}
 
 	a {
 		color:white;
 		&:hover {
 			color:rgba(255,255,255,.75);
+			text-decoration:none;
 		}
 	}
 
 	nav {
 		position:absolute;
-		
 		top:0;
 		right:0;
 
+		height:8rem;
 
 		li {
 			display:inline-block;
+
+			height: 70px; // Little magic-number-ey
+			padding:0 1em 0 0;
+
+			line-height:3.5; //handling v-align text without pixels
 		}
 	}
 
